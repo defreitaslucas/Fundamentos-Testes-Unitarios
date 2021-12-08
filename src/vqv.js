@@ -16,6 +16,15 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (nome, idade) => {
+  if (!nome && !idade) {
+    return undefined;
+  } 
+  // https://pt.stackoverflow.com/questions/97471/para-que-serve-uma-template-string-string-literal-declarada-com-acento-grave utilizei este tutorial para poder entender a quebra de linha sem utilizar o \n.
+  return `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+};
 
 module.exports = vqv;
