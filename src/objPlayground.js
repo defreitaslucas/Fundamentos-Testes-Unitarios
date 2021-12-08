@@ -33,8 +33,27 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
+const calculator = (number1, number2) => {
+  let objeto = {
+    sum: number1 + number2,
+    mult: number1 * number2,
+    // utilizei o math.trunc para retornar a parte inteira da divisao sem as casas decimais, de acordo com essa documentação. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+    div: Math.trunc(number1 / number2),
+    sub: number1 - number2,
+  };
+  return objeto;
+};
 
-const arrayGenerator = (type, object) => {};
+const arrayGenerator = (type, objeto) => {
+  if (type === 'keys') {
+    return Object.keys(objeto);
+  }
+  if (type === 'values') {
+    return Object.values(objeto);
+  }
+  if (type === 'entries') {
+    return Object.entries(objeto);
+  }
+};
 
 module.exports = { calculator, arrayGenerator };
